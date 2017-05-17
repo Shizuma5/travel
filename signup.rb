@@ -2,7 +2,6 @@
 
 require 'sqlite3'
 require 'FileUtils'
-require 'pp'
 
 include SQLite3
 
@@ -35,8 +34,6 @@ rescue => error
   retry
 end
 
-FileUtils.mkdir_p("./userlist/#{user_id}")
-
-db.execute("select * from user_info;") { |row| pp row}
+FileUtils.mkdir_p("./userlist/#{user_id}/travellist")
 
 db.close
