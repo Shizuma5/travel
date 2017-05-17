@@ -1,9 +1,10 @@
-#encoding_UTF-8
+#encoding:UTF-8
 
 require 'sqlite3'
-require 'pp'
 
 include SQLite3
+
+#疑似的にログイン機構を作ってみた
 
 db = Database.new("travel")
 
