@@ -1,12 +1,14 @@
 #encoding:UTF-8
 
 require 'sqlite3'
+require 'FileUtils'
 require 'pp'
 
 include SQLite3
 
 db = Database.new("travel")
 
+begin
 
 #ユーザーのサインアップ情報を受け取る(名前とメールアドレス、パスワード)仮の状態
 #ユーザーにIDを入力してもらい、それをデータベースで確認し、ダブりがなければそのまま登録する
@@ -20,7 +22,6 @@ user_name = "A"
 
 sql = "insert into user_info values('#{user_id}', '#{user_name}', '#{user_pass}', '#{user_mail}');"
 
-begin
 
   db.execute(sql)
 
@@ -31,7 +32,10 @@ rescue => error
   error.to_s.match(/user_info\.(\w+)$/){ |md|
     print("この", md[1], "は既に使われています。\n")
   }
+  retry
 end
+
+FileUtils.mkdir_p("./userlist/#{user_id}")
 
 db.execute("select * from user_info;") { |row| pp row}
 
