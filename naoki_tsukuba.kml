@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document>
+<Placemark>
+<Style id="PolyStyle1">
+  <IconStyle>
+  <Icon>
+  <href>http://cyberjapandata.gsi.go.jp/portal/sys/v4/symbols/080.png</href>
+  </Icon>
+  <scale>2</scale>
+  </IconStyle>
+</Style>
+<name>tukuba</name>
+<description>
+<![CDATA[ tsukuba
+<!--  [CDATA[ 以下を変更する -->
+tsukubapic
+<img src="http://www.tsukuba.ac.jp/access/images/map_kasuga.jpg">
+]]>
+</description>
+<styleUrl>#PolyStyle1</styleUrl>
+<Point>
+<coordinates>140.1063305555556,36.08650555555555</coordinates>
+</Point>
+</Placemark>
+</Document>
+</kml>
