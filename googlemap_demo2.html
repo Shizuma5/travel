@@ -1,0 +1,33 @@
+<html>
+<head>
+  <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBMp5_5hyhKotQqX22WFnBgBECpZg3TTTU&callback=initMap">
+  </script>
+  <script type="text/javascript">
+  function initialize() {
+  var initPos = new google.maps.LatLng(36.0865, 140.10633);
+  var myOptions = {
+    noClear : true,
+    center : initPos,
+    zoom :3,
+    mapTypeId : google.maps.MapTypeId.ROADMAP,
+    mapTypeControl: true
+
+  };
+  var map_canvas = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+    var kmlUrl = "https://raw.githubusercontent.com/muramon/m4/master/naoki_tsukuba.kml";
+    var kmlLayer = new google.maps.KmlLayer(kmlUrl,{
+     preserveViewport:true
+    });
+    kmlLayer.setMap(map_canvas);
+
+
+
+   }
+</script>
+</head>
+<body onload="initialize()">
+m4
+  <div id="map_canvas" style="width:900px; height:600px"></div>
+</body>
+</html>
