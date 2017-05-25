@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>Ground Overlays</title>
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+    <script>
+      // This example uses a GroundOverlay to place an image on the map
+      // showing an antique map of Newark, NJ.
+
+      var historicalOverlay;
+
+      function initMap() {
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 13,
+          center: {lat: 36.0865, lng: 140.10633}
+        });
+
+        var flightPlanCoordinates = [
+            {lat: 36.095, lng: 140.11},
+            {lat: 36.195, lng: 140.11}
+          ];
+          var flightPath = new google.maps.Polyline({
+            path: flightPlanCoordinates,
+            geodesic: true,
+            strokeColor: '#FF0000',
+            strokeOpacity: 1.0,
+            strokeWeight: 2
+          });
+            flightPath.setMap(map);
+
+
+
+
+        var imageBounds = {
+          north: 36.1,
+          south: 36.09,
+          east: 140.12,
+          west: 140.105
+        };
+
+        historicalOverlay = new google.maps.GroundOverlay(
+            'https://raw.githubusercontent.com/muramon/travel/master/DSC_0371.JPG',
+            imageBounds);
+        historicalOverlay.setMap(map);
+
+        var imageBounds = {
+          north: 36.2,
+          south: 36.19,
+          east: 140.12,
+          west: 140.105
+        };
+
+
+        historicalOverlay = new google.maps.GroundOverlay(
+            'https://raw.githubusercontent.com/muramon/travel/master/DSC_0371.JPG',
+            imageBounds);
+        historicalOverlay.setMap(map);
+
+              }
+
+
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBMp5_5hyhKotQqX22WFnBgBECpZg3TTTU&callback=initMap">
+    </script>
+  </body>
+</html>
