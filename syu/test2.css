@@ -1,0 +1,58 @@
+/*addボタン*/
+.square_btn3{
+    display: inline-block;
+    font-size: 15px;
+    padding: 0.1em 1.5em;
+    text-decoration: none;
+    background: #333333;/*ボタン色*/
+    color: #FFF;
+    border-bottom: solid 6px #627295;
+    border-radius: 8px;
+}
+.square_btn3:active {/*ボタンを押したとき*/
+    -ms-transform: translateY(4px);
+    -webkit-transform: translateY(4px);
+    transform: translateY(4px);/*下に動く*/
+    box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);/*影を小さく*/
+    border-bottom: none;
+}
+
+/*マップボタン*/
+.btn4{
+  display: inline-block;
+  text-decoration: none;
+  background: #333333;
+  color: #FFF;
+  width: 220px;
+  height: 220px;
+  line-height: 120px;
+  border-radius: 50%;
+  border: solid 2px #668ad8;
+  text-align: center;
+  vertical-align: middle;
+  overflow: hidden;
+  font-weight: bold;
+  transition: .4s;
+}
+
+.btn4:hover {
+    background: #4682B4;
+}
+
+.square_btn6{
+    display: inline-block;
+    font-size: 15px;
+    padding: 0.1em 1.5em;
+    text-decoration: none;
+    background: #333333;/*ボタン色*/
+    color: #FFF;
+    border-bottom: solid 6px #627295;
+    border-radius: 8px;
+}
+.square_btn6:active {/*ボタンを押したとき*/
+    -ms-transform: translateY(4px);
+    -webkit-transform: translateY(4px);
+    transform: translateY(4px);/*下に動く*/
+    box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);/*影を小さく*/
+    border-bottom: none;
+}
